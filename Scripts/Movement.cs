@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private CharacterController controller;
     public int speed = 7;
+    
+    
 
     void Start()
     {
@@ -17,24 +19,26 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey("w"))
         {
-            controller.Move(Vector3.forward * speed * Time.deltaTime);
-            transform.LookAt(transform.position + new Vector3(0,0,1));
+            controller.Move(-transform.forward * speed * Time.deltaTime);
+            //transform.LookAt(transform.position + new Vector3(0,0,1));
         }
         if (Input.GetKey("s"))
         {
-            controller.Move(Vector3.back * speed * Time.deltaTime);
-            transform.LookAt(transform.position + new Vector3(0,0,-1));
+            controller.Move(transform.forward * speed * Time.deltaTime);
+            //transform.LookAt(transform.position + new Vector3(0,0,-1));
         }
         if (Input.GetKey("a"))
         {
-            controller.Move(Vector3.left * speed * Time.deltaTime);
-            transform.LookAt(transform.position + new Vector3(-1,0,0));
+            controller.Move(transform.right * speed * Time.deltaTime);
+            //transform.LookAt(transform.position + new Vector3(-1,0,0));
         }
         if (Input.GetKey("d"))
         {
-            controller.Move(Vector3.right * speed * Time.deltaTime);
-            transform.LookAt(transform.position + new Vector3(1,0,0));
+            controller.Move(-transform.right * speed * Time.deltaTime);
+            //transform.LookAt(transform.position + new Vector3(1,0,0));
         }
+
+        
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
