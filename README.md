@@ -1,1 +1,1 @@
-This is my progress working on the Youngwonks Unity Lessons.
+This is my Youngwonks Unity Lessons Project.
